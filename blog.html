@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="마포 서버 웜업 전문, 화곡 셔츠룸 최고의 시스템. 010-6279-0862 지금 전화하세요. 당신의 서버를 미친 듯이 달궈드립니다.">
+  <meta name="keywords" content="서버 웜업, 화곡 셔츠룸, 마포, 서버 최적화, 웜업 서비스, 브루탈리스트 웹, raw 성능">
+  <meta name="bpaas-design-system" content="brutalist-avantgarde">
+  <meta name="bpaas-design-theme" content="kr-neon-void">
+  <meta property="og:title" content="화곡 셔츠룸 블로그 - 마포 서버 웜업 인사이트">
+  <meta property="og:description" content="서버 웜업의 진실을 까발린다. 화곡 셔츠룸이 전하는 생존 전략.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hwagok-warmup.com/blog">
+  <title>블로그 | 화곡 셔츠룸 - 마포 서버 웜업</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      line-height: 1.5;
+      padding: 0;
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: #ff0040;
+      text-shadow: 0 0 20px #ff004088, 0 0 40px #ff004044;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      color: #ff6a00;
+      border-left: 8px solid #ff6a00;
+      padding-left: 1rem;
+      margin: 2rem 0 1rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #ffaa00;
+      margin: 1.5rem 0 0.75rem;
+    }
+    p, li, blockquote {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #c0c0c0;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #ff0066;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+    a:hover, a:focus {
+      color: #ffffff;
+      border-bottom-color: #ff0066;
+    }
+
+    /* ===== STRUCTURE ===== */
+    header, main, footer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+    }
+
+    /* ===== SPACING ===== */
+    header {
+      border-bottom: 4px solid #ff0040;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    main {
+      min-height: 60vh;
+    }
+
+    footer {
+      border-top: 4px solid #ff0040;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #666;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    nav a {
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.9rem;
+    }
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      padding: 0.5rem;
+      background: none;
+      border: none;
+    }
+    .hamburger-menu span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: #ff0040;
+      border-radius: 2px;
+      transition: all 0.2s ease;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .tel-link {
+      display: inline-block;
+      background: #ff0040;
+      color: #0a0a0a;
+      padding: 0.5rem 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border: none;
+      border-radius: 0;
+      transition: all 0.2s ease;
+    }
+    .tel-link:hover, .tel-link:focus {
+      background: #ff6a00;
+      color: #0a0a0a;
+      border-bottom: none;
+    }
+
+    /* ===== RESPONSIVE 768 ===== */
+    @media (max-width: 768px) {
+      html {
+        font-size: 14px;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      header, main, footer {
+        padding: 1rem;
+      }
+      header {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .hamburger-menu {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        padding: 1rem 0;
+        background: #111;
+        border-top: 2px solid #ff0040;
+        margin-top: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .tel-link {
+        margin-top: 0.5rem;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    /* ===== ARTICLE CARD ===== */
+    .article-card {
+      background: #111;
+      border: 2px solid #333;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s ease;
+    }
+    .article-card:hover {
+      border-color: #ff0040;
+    }
+    .article-meta {
+      font-size: 0.85rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+    .article-card p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .article-card blockquote {
+      border-left: 6px solid #ff6a00;
+      padding-left: 1rem;
+      color: #ffaa00;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+    .cta-box {
+      background: #1a0000;
+      border: 2px solid #ff0040;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .cta-box p {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ff6a00;
+    }
+    .cta-phone {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #ffffff;
+      background: #ff0040;
+      padding: 0.6rem 2rem;
+      display: inline-block;
+      letter-spacing: 0.15em;
+      transition: all 0.2s ease;
+    }
+    .cta-phone:hover {
+      background: #ff6a00;
+      color: #0a0a0a;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <h1 style="font-size: 1.8rem; margin-bottom: 0;">화곡 셔츠룸</h1>
+    <span style="color: #ff6a00; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">마포 서버 웜업</span>
+  </div>
+  <nav>
+    <button class="hamburger-menu" id="menuToggle" aria-label="메뉴">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="/">홈</a>
+      <a href="/about">소개</a>
+      <a href="/blog">블로그</a>
+      <a href="/contact">문의</a>
+      <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1>블로그</h1>
+  <p style="margin-bottom: 2rem; color: #ff6a00; font-weight: 700;">서버 웜업에 대한 가감 없는 이야기 — 규칙을 깨는 자만이 살아남는다.</p>
+
+  <!-- 단일 블로그 글 (정보성 글 1편) -->
+  <div class="article-card">
+    <div class="article-meta">작성자: 화곡 셔츠룸 에디터 | 2025-03-15 | 카테고리: 서버 웜업 인사이트</div>
+    <h2 style="border-left: none; padding-left: 0; margin-top: 0;">서버 웜업은 사기다</h2>
+    <p>들어라. 네가 지금까지 믿어온 '서버 웜업'이라는 개념은 99% 거짓말이다. 대부분의 업체는 너한테 핑계를 팔아먹는다. "서버가 안정화되는 중입니다" — 지난 3년 동안 그 말을 들은 적이 몇 번인가? 네 서버는 안정화되는 게 아니라 서서히 죽어가고 있었다.</p>
+    <p>진짜 웜업은 전기톱처럼 날카롭고, 번개처럼 빠르다. 네 서버의 코어를 미친 듯이 달궈서 처음부터 끝까지 한계치로 밀어붙이는 것. 그게 화곡 셔츠룸이 하는 일이다.</p>
+    <blockquote>"나는 7년 동안 서버를 굴려왔다. 화곡 셔츠룸의 웜업을 한 번 경험한 후로는 다른 건 못 쓴다. 이건 중독이다." — 강남 스타트업 CTO (익명)</blockquote>
+    <p>여기 마포에서 우리는 다르게 논다. 우리는 '셔츠룸'이라는 이름으로 통하지만, 진짜 정체는 서버 웜업의 끝판왕이다. 규칙을 따르지 않는다. 표준 절차는 없다. 오직 결과만 있을 뿐. 네 서버가 폭발 직전까지 달아오르는 그 쾌감, 그걸 우리는 시스템화했다.</p>
+    <p>화곡 셔츠룸의 웜업 프로세스를 한 줄로 요약하면 이렇다: <strong>네 서버를 한계 이상으로 밀어서, 그 너머의 성능을 끌어내라.</strong> 우리는 네 데이터센터의 전력량을 두 배로 뛰어넘게 만들고, CPU 온도를 95도까지 올린다. 그리고 거기서 안정화를 시킨다. 미쳤다고? 맞다. 그래서 결과가 나온다.</p>
+    <p>네가 안전한 길만 걸어왔다면 여기 오지 마라. 우리는 부드러운 웜업 따위는 팔지 않는다. 우리는 불을 판다. 진짜 성능을 원한다면 010-6279-0862로 전화해라. 상담은 3분이면 끝난다. 더 이상의 설명은 없다.</p>
+  </div>
+
+  <!-- 행동 유도 박스 (CTA) -->
+  <div class="cta-box">
+    <p>지금 당장 네 서버를 깨워라 — 상담은 전화 한 통이면 끝</p>
+    <a href="tel:010-6279-0862" class="cta-phone">010-6279-0862</a>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">※ 전화 연결이 안 될 경우 문자 남기세요. 24시간 내 연락드립니다.</p>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 화곡 셔츠룸 — 마포 서버 웜업 | 모든 권리 보유. 규칙은 깨라고 있는 것이다.</p>
+  <p style="margin-top: 0.5rem; font-size: 0.8rem;">주소: 서울 마포구 (정확한 위치는 전화 문의) | 사업자등록번호: 000-00-00000</p>
+</footer>
+
+<script>
+  // 모바일 햄버거 메뉴 토글
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    navLinks.classList.toggle('active');
+  });
+
+  // 메뉴 외부 클릭 시 닫기
+  document.addEventListener('click', function(e) {
+    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+      navLinks.classList.remove('active');
+    }
+  });
+</script>
+
+</body>
+</html>
